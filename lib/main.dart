@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:new_store_app/screens/home_page.dart';
+import 'package:new_store_app/screens/update_product.dart';
+
+void main() {
+  runApp(const StoreApp());
+}
+
+class StoreApp extends StatelessWidget {
+  const StoreApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Store App',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      routes: {
+        HomePage.id: (context) => const HomePage(),
+        UpdateProduct.id: (context) =>  UpdateProduct(),
+      },
+      initialRoute: HomePage.id,
+    );
+  }
+}
